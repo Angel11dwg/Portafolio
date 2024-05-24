@@ -2,14 +2,25 @@
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro'
 import Nav from '../components/Nav.astro'
+import Aviso from '../components/Aviso.astro';
+
 
 ---
 
 <Layout title="Angel Olea Portafolio">
-	<Nav />
+	
 	<main>
-		<section>
-			<h1>Hola, bienvenido</h1>
+		<section class="section">
+			<h1 class="heading">Hola, soy Angel Olea</h1> 
+			<div class="image-container">
+				<img class="profile-img"
+					src="/yo.jpg"
+					alt="Foto de perfil"
+				/>
+	        </div>
+			<div class="status">
+				<Aviso>Disponiblidad inmediata</Aviso>
+			</div>
 			<p>Soy un programador frontend recien egresado del instituto profesional Aiep de la carrera "Programación y Análisis de sistemas" y en busco oportunidades de adquirir mas conocimiento a base de experiencia.</p>
 			<a href="/CV-Ángel-Olea-Donoso.pdf" download>
 				<button>Descargar CV</button>
@@ -17,8 +28,8 @@ import Nav from '../components/Nav.astro'
 		</section>
 
 		<section id="sobre-mi">
-			<h2>Sobre mi</h2>
-			<p>Hola, soy Angel Olea, un desarrollador frontend con gran entusiasmo por crear diseños web 
+			<h2 id="h2-sobre-mi">Sobre mi</h2>
+			<p>Soy un desarrollador frontend con gran entusiasmo por crear diseños web 
 				atractivos y funcionales. Aquí estan las herramientas y tecnologías con las que suelo trabajar:</p>
 			<ul>
 				<li>
@@ -53,7 +64,7 @@ import Nav from '../components/Nav.astro'
 
 		</section>
 		<section id="Contacto">
-			<h1>Contacto</h1>
+			<h2 id="h2-contacto">Contacto</h2>
 			<form action="https://formspree.io/f/xpzvewzn" method="POST">
                 <label for="name">Nombre:</label>
                 <input type="text" id="name" name="name" required />
@@ -77,6 +88,12 @@ import Nav from '../components/Nav.astro'
 <style>
 	h1, h2, p, ul, li {
 		color: aliceblue;
+		margin-left: 10%;
+		margin-right: 10%;
+		justify-content: center;
+	}
+	p {
+		font-size:x-large;
 	}
 	button {
         background-color: #4CAF50; 
@@ -87,9 +104,10 @@ import Nav from '../components/Nav.astro'
         text-decoration: none;
         display: inline-block;
         font-size: 16px;
-        margin: 4px 2px;
         cursor: pointer;
         border-radius: 4px;
+		margin-left: 10%;
+		margin-right: 10%;
     }
     button:hover {
         background-color: #45a049; 
@@ -100,8 +118,9 @@ import Nav from '../components/Nav.astro'
 	}
 	ul li{
 		display: inline-block;
-		margin-right: 20px;
+		margin: 20px;
 		text-align: center;
+		
 	}
 	ul li img{
 		display: block;
@@ -148,6 +167,45 @@ import Nav from '../components/Nav.astro'
 	button[type="submit"]:hover {
 		background-color: #45a049;
 	}
-
+	.section {
+		width: 100%;
+		margin-inline-start: auto;
+		padding-top: 11rem;
+		padding-bottom: 8rem;
+		text-align: center;
+	}
+	.heading, #h2-sobre-mi, #h2-contacto {
+		color: white;
+		font-size: 3rem;
+		font-weight: bold;
+		display: flex;
+		flex-direction: row;
+		gap: 1rem;
+		justify-content: center;
+	}
+	.status {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.profile-img {
+        border-radius: 50%;
+        width: 9rem;
+        height: 10rem;
+    }
+	.image-container {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 1rem;
+	}
+	#sobre-mi {
+		width: 100%;
+		margin-inline-start: auto;
+		margin-bottom: 8rem;
+		text-align: center;
+	}
+	#Contacto {
+		margin-bottom: 8rem;
+	}
 </style>
 
