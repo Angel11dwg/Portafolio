@@ -4,6 +4,8 @@ import Footer from '../components/Footer.astro'
 import Nav from '../components/Nav.astro'
 import Aviso from '../components/Aviso.astro';
 
+const Nombre = "Angel Olea";
+
 
 ---
 
@@ -11,7 +13,7 @@ import Aviso from '../components/Aviso.astro';
 	
 	<main>
 		<section class="section">
-			<h1 class="heading">Hola, soy Angel Olea</h1> 
+			<h1 class="heading">Hola, soy {Nombre}</h1> 
 			<div class="image-container">
 				<img class="profile-img"
 					src="/yo.jpg"
@@ -19,9 +21,9 @@ import Aviso from '../components/Aviso.astro';
 				/>
 	        </div>
 			<div class="status">
-				<Aviso>Disponiblidad inmediata</Aviso>
+				<Aviso message="Disponiblidad inmediata" />
 			</div>
-			<p>Soy un programador frontend recien egresado del instituto profesional Aiep de la carrera "Programación y Análisis de sistemas" y en busco oportunidades de adquirir mas conocimiento a base de experiencia.</p>
+			<p>Soy un programador frontend recien egresado del instituto profesional Aiep de la carrera "Programación y Análisis de sistemas" y busco oportunidades de adquirir mas conocimiento a base de experiencia.</p>
 			<a href="/CV-Ángel-Olea-Donoso.pdf" download>
 				<button>Descargar CV</button>
 			</a>
@@ -170,7 +172,7 @@ import Aviso from '../components/Aviso.astro';
 	.section {
 		width: 100%;
 		margin-inline-start: auto;
-		padding-top: 11rem;
+		padding-top: 5rem;
 		padding-bottom: 8rem;
 		text-align: center;
 	}
@@ -207,5 +209,6 @@ import Aviso from '../components/Aviso.astro';
 	#Contacto {
 		margin-bottom: 8rem;
 	}
+
 </style>
 

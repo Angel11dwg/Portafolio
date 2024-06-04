@@ -1,0 +1,21 @@
+---
+const { message } = Astro.props;
+---
+
+<div class="aviso">
+  {message}
+</div>
+
+<style>
+  .aviso {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: rgba(76, 175, 80, 0.1); /* Color de fondo para destacar */
+    color: white; /* Color del texto */
+    font-size: 16px
+    border: 1px solid #4CAF50;
+    border-radius: 9999px; /* Bordes redondeados para crear una cápsula */
+    text-align: center; /* Alinear el texto al centro */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para dar efecto de profundidad */
+  }
+</style>
