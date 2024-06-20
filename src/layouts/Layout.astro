@@ -1,6 +1,9 @@
 ---
 import Nav from '../components/Nav.astro';
+import BackgroundSVG from '../components/BackgroundSVG.astro';
 import '@fontsource/poppins/400.css';
+import Footer from '../components/Footer.astro';
+
 interface Props {
   title: string;
 }
@@ -20,7 +23,20 @@ const { title } = Astro.props;
   </head>
   <body>
     <Nav />
+    <div class="background-svg-container bottom-svg">
+      <BackgroundSVG />
+  </div>
+  
+    <div class="background-svg-container top-svg">
+      <BackgroundSVG />
+    </div>
+        <div class="background-svg-container top-svg">
+      <BackgroundSVG />
+    </div>
     <slot />
+
+    <Footer />
+    
   </body>
 </html>
 
@@ -31,16 +47,28 @@ const { title } = Astro.props;
   html {
     font-family: "poppins" system-ui, sans-serif;
     scroll-behavior: smooth;
-    
   }
   body {
     background: #202020;
     min-height: 100vh;
-    justify-content: center;
     display: flex;
     flex-direction: column;
+    justify-content: space-between; /* Asegura que el footer se quede abajo */
   }
-  @media (prefers-reduced-motion: reduce){
+  .background-svg-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  .background-svg-container svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .top-svg svg {
+    transform: rotate(0deg); /* No rotar para que las curvas estén hacia arriba */
+  }
+  @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
     }

@@ -1,103 +1,91 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Footer from '../components/Footer.astro'
-import Nav from '../components/Nav.astro'
+import Footer from '../components/Footer.astro';
 import Aviso from '../components/Aviso.astro';
+import BackgroundSVG from '../components/BackgroundSVG.astro';
 
 const Nombre = "Angel Olea";
-
-
 ---
 
 <Layout title="Angel Olea Portafolio">
-	
-	<main>
-		<section class="section">
-			<h1 class="heading">Hola, soy {Nombre}</h1> 
-			<div class="image-container">
-				<img class="profile-img"
-					src="/yo.jpg"
-					alt="Foto de perfil"
-				/>
-	        </div>
-			<div class="status">
-				<Aviso message="Disponiblidad inmediata" />
-			</div>
-			<p>Soy un programador frontend recien egresado del instituto profesional Aiep de la carrera "Programación y Análisis de sistemas" y busco oportunidades de adquirir mas conocimiento a base de experiencia.</p>
-			<a href="/CV-Ángel-Olea-Donoso.pdf" download>
-				<button>Descargar CV</button>
-			</a>
-		</section>
+    <main>
+        <section id="bienvenida" class="section">
+            <h1 class="heading">Hola, soy {Nombre}</h1> 
+            <div class="image-container">
+                <img class="profile-img" src="/yo.jpg" alt="Foto de perfil" />
+            </div>
+            <div class="status">
+                <Aviso message="Disponibilidad inmediata" />
+            </div>
+            <p>Soy un programador frontend recién egresado del instituto profesional Aiep de la carrera "Programación y Análisis de sistemas" y busco oportunidades de adquirir más conocimiento a base de experiencia.</p>
+            <a href="/CV-Ángel-Olea-Donoso.pdf" download>
+                <button>Descargar CV</button>
+            </a>
+        </section>
 
-		<section id="sobre-mi">
-			<h2 id="h2-sobre-mi">Sobre mi</h2>
-			<p>Soy un desarrollador frontend con gran entusiasmo por crear diseños web 
-				atractivos y funcionales. Aquí estan las herramientas y tecnologías con las que suelo trabajar:</p>
-			<ul>
-				<li>
-					<img src="/icons/HTML.png" alt="HTML"  height="60px"/>
-					<span>HTML</span>
-				</li>
-				<li>
-					<img src="/icons/CSS.png" alt="CSS" height="60px" />
-					<span>CSS</span>
-				</li>
-				<li>
-					<img src="/icons/JS.png" alt="JAVASCRIPT" height="60px"/>
-					<span>JAVASCRIPT</span>
-				</li>
-				<li>
-					<img src="/icons/REACT.png" alt="REACT" height="60px"/>
-					<span>REACT</span>
-				</li>
-				<li>
-					<img src="/icons/NEXTJS.png" alt="NEXT.JS" height="60px"/>
-					<span>NEXT.JS</span>
-				</li>
-				<li>
-					<img src="/icons/TAILWINDCSS.png" alt="TAILWIND CSS" height="50px">
-					<span>TAILWIND CSS</span>
-				</li>
-				<li>
-					<img src="/icons/ASTRO.png" alt="ASTRO" height="50px">
-					<span>ASTRO</span>
-				</li>
-			</ul>
+        <section id="sobre-mi">
+            <h2 id="h2-sobre-mi">Sobre mí</h2>
+            <p>Soy un desarrollador frontend con gran entusiasmo por crear diseños web 
+                atractivos y funcionales. Aquí están las herramientas y tecnologías con las que suelo trabajar:</p>
+            <ul>
+                <li>
+                    <img src="/icons/HTML.png" alt="HTML"  height="60px"/>
+                    <span>HTML</span>
+                </li>
+                <li>
+                    <img src="/icons/CSS.png" alt="CSS" height="60px" />
+                    <span>CSS</span>
+                </li>
+                <li>
+                    <img src="/icons/JS.png" alt="JAVASCRIPT" height="60px"/>
+                    <span>JAVASCRIPT</span>
+                </li>
+                <li>
+                    <img src="/icons/REACT.png" alt="REACT" height="60px"/>
+                    <span>REACT</span>
+                </li>
+                <li>
+                    <img src="/icons/NEXTJS.png" alt="NEXT.JS" height="60px"/>
+                    <span>NEXT.JS</span>
+                </li>
+                <li>
+                    <img src="/icons/TAILWINDCSS.png" alt="TAILWIND CSS" height="50px">
+                    <span>TAILWIND CSS</span>
+                </li>
+                <li>
+                    <img src="/icons/ASTRO.png" alt="ASTRO" height="50px">
+                    <span>ASTRO</span>
+                </li>
+            </ul>
+        </section>
 
-		</section>
-		<section id="Contacto">
-			<h2 id="h2-contacto">Contacto</h2>
-			<form action="https://formspree.io/f/xpzvewzn" method="POST">
+        <section id="Contacto">
+            <h2 id="h2-contacto">Contacto</h2>
+            <form action="https://formspree.io/f/xpzvewzn" method="POST">
                 <label for="name">Nombre:</label>
                 <input type="text" id="name" name="name" required />
-
                 <label for="email">Correo Electrónico:</label>
                 <input type="email" id="email" name="email" required />
-
                 <label for="message">Mensaje:</label>
                 <textarea id="message" name="message" rows="4" required></textarea>
-
                 <button type="submit">Enviar</button>
             </form>
-		</section>
-
-	</main>
-	<Footer />
+        </section>
+    </main>
 
 </Layout>
 
-
 <style>
-	h1, h2, p, ul, li {
-		color: aliceblue;
-		margin-left: 10%;
-		margin-right: 10%;
-		justify-content: center;
-	}
-	p {
-		font-size:x-large;
-	}
-	button {
+    h1, h2, p, ul, li {
+        color: aliceblue;
+        margin-left: 10%;
+        margin-right: 10%;
+        justify-content: center;
+    }
+    p {
+        font-size: x-large;
+    }
+    button {
         background-color: #4CAF50; 
         border: none;
         color: white;
@@ -108,55 +96,55 @@ const Nombre = "Angel Olea";
         font-size: 16px;
         cursor: pointer;
         border-radius: 4px;
-		margin-left: 10%;
-		margin-right: 10%;
+        margin-left: 10%;
+        margin-right: 10%;
     }
     button:hover {
         background-color: #45a049; 
-	}
-	ul {
-		list-style-type: none;
-		padding-left: 0;
-	}
-	ul li{
-		display: inline-block;
-		margin: 20px;
-		text-align: center;
-		
-	}
-	ul li img{
-		display: block;
-		margin: 0 auto;
-	}
-	ul li span {
-		display: block;
-		margin-top: 5px;
-	}
-	section {
-		margin-bottom: 20px;
-	}
-	form {
-		display: flex;
-		flex-direction: column;
-		max-width: 600px;
-		margin: 0 auto;
-	}
-	label {
-		margin-top: 10px;
-		color: aliceblue;
-	}
-	input, textarea {
-		padding: 10px;
-		margin-top: 5px;
-		border: none;
-		border-radius: 4px;
-	}
-	input[type="text"], input[type="email"], textarea {
-		width: 100%;
-		box-sizing: border-box;
-	}
-	button[type="submit"] {
-		margin-top: 20px;
+    }
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+    ul li {
+        display: inline-block;
+        margin: 20px;
+        text-align: center;
+    }
+    ul li img {
+        display: block;
+        margin: 0 auto;
+    }
+    ul li span {
+        display: block;
+        margin-top: 5px;
+    }
+    section {
+        margin-bottom: 20px;
+        position: relative; /* Para que el SVG se posicione correctamente */
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    label {
+        margin-top: 10px;
+        color: aliceblue;
+    }
+    input, textarea {
+        padding: 10px;
+        margin-top: 5px;
+        border: none;
+        border-radius: 4px;
+    }
+    input[type="text"], input[type="email"], textarea {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    button[type="submit"] {
+        margin-top: 20px;
         background-color: #4CAF50;
         color: white;
         border: none;
@@ -165,50 +153,61 @@ const Nombre = "Angel Olea";
         font-size: 16px;
         cursor: pointer;
         border-radius: 4px;
-	}
-	button[type="submit"]:hover {
-		background-color: #45a049;
-	}
-	.section {
-		width: 100%;
-		margin-inline-start: auto;
-		padding-top: 5rem;
-		padding-bottom: 8rem;
-		text-align: center;
-	}
-	.heading, #h2-sobre-mi, #h2-contacto {
-		color: white;
-		font-size: 3rem;
-		font-weight: bold;
-		display: flex;
-		flex-direction: row;
-		gap: 1rem;
-		justify-content: center;
-	}
-	.status {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-	.profile-img {
+    }
+    button[type="submit"]:hover {
+        background-color: #45a049;
+    }
+    .section {
+        width: 100%;
+        margin-inline-start: auto;
+        padding-top: 5rem;
+        padding-bottom: 8rem;
+        text-align: center;
+    }
+    .heading, #h2-sobre-mi, #h2-contacto {
+        color: white;
+        font-size: 3rem;
+        font-weight: bold;
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        justify-content: center;
+    }
+    .status {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .profile-img {
         border-radius: 50%;
         width: 9rem;
         height: 10rem;
     }
-	.image-container {
-		display: flex;
-		justify-content: center;
-		margin-bottom: 1rem;
-	}
-	#sobre-mi {
-		width: 100%;
-		margin-inline-start: auto;
-		margin-bottom: 8rem;
-		text-align: center;
-	}
-	#Contacto {
-		margin-bottom: 8rem;
-	}
-
+    .image-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+    #sobre-mi {
+        width: 100%;
+        margin-inline-start: auto;
+        margin-bottom: 8rem;
+        text-align: center;
+    }
+    #Contacto {
+        margin-bottom: 8rem;
+    }
+    .background-svg-container {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+    .background-svg-container svg {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .bottom-svg svg {
+        transform: rotate(0deg); /* No rotar para que las curvas estén hacia arriba */
+    }
 </style>
-
