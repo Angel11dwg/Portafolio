@@ -21,23 +21,24 @@
         
     }
     header {
-        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         display: flex;
+        position: fixed;
         justify-content: center;
         align-items: center;
-        padding-top: 0.75rem;
-        padding-bottom: 0.75rem;
+        padding: 1rem;
+        margin-bottom: 1rem;
         font-size: x-large;
-        background-color: #333;
+        background-color: #2a475e;
         z-index: 1000;
         
     }
     ul {
         display: flex;
-        list-style: none;
+        list-style-type: none;
+        gap: 2rem;
         margin: 0;
         padding: 0;
     }
@@ -48,11 +49,13 @@
         margin-right: 0;
     }
     a{
-        color:white;
+        color:#c7d5e0;
         text-decoration: none;
+        font-size: 1.1rem;
+        transition: color 0.3s ease;
     }
     a:hover {
-        text-decoration: underline;
+        color: #ffffff;
     }
     body {
         padding-top: 3.5rem;

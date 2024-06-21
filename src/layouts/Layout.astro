@@ -23,20 +23,9 @@ const { title } = Astro.props;
   </head>
   <body>
     <Nav />
-    <div class="background-svg-container bottom-svg">
-      <BackgroundSVG />
-  </div>
-  
-    <div class="background-svg-container top-svg">
-      <BackgroundSVG />
-    </div>
-        <div class="background-svg-container top-svg">
-      <BackgroundSVG />
-    </div>
-    <slot />
 
+    <slot />
     <Footer />
-    
   </body>
 </html>
 
@@ -45,15 +34,17 @@ const { title } = Astro.props;
     color-scheme: light dark;
   }
   html {
-    font-family: "poppins" system-ui, sans-serif;
+    font-family: "poppins", system-ui, sans-serif;
     scroll-behavior: smooth;
+    
   }
   body {
-    background: #202020;
+    background: linear-gradient(to bottom, #1a2a6c, #b21f1f, #fdbb2d);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Asegura que el footer se quede abajo */
+    justify-content: space-between;
+    
   }
   .background-svg-container {
     position: relative;
@@ -66,7 +57,7 @@ const { title } = Astro.props;
     display: block;
   }
   .top-svg svg {
-    transform: rotate(0deg); /* No rotar para que las curvas estén hacia arriba */
+    transform: rotate(0deg);
   }
   @media (prefers-reduced-motion: reduce) {
     html {

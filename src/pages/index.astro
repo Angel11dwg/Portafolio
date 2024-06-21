@@ -1,15 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Footer from '../components/Footer.astro';
+
 import Aviso from '../components/Aviso.astro';
-import BackgroundSVG from '../components/BackgroundSVG.astro';
+
 
 const Nombre = "Angel Olea";
 ---
 
 <Layout title="Angel Olea Portafolio">
-    <main>
-        <section id="bienvenida" class="section">
+    <main class="profile-main">
+        <section id="bienvenida" class="section profile-section">
             <h1 class="heading">Hola, soy {Nombre}</h1> 
             <div class="image-container">
                 <img class="profile-img" src="/yo.jpg" alt="Foto de perfil" />
@@ -23,13 +23,13 @@ const Nombre = "Angel Olea";
             </a>
         </section>
 
-        <section id="sobre-mi">
-            <h2 id="h2-sobre-mi">Sobre mí</h2>
+        <section id="sobre-mi" class="profile-section">
+            <h2 id="h2-sobre-mi" class="section-heading">Sobre mí</h2>
             <p>Soy un desarrollador frontend con gran entusiasmo por crear diseños web 
                 atractivos y funcionales. Aquí están las herramientas y tecnologías con las que suelo trabajar:</p>
-            <ul>
+            <ul class="skills-list">
                 <li>
-                    <img src="/icons/HTML.png" alt="HTML"  height="60px"/>
+                    <img src="/icons/HTML.png" alt="HTML" height="60px"/>
                     <span>HTML</span>
                 </li>
                 <li>
@@ -59,9 +59,9 @@ const Nombre = "Angel Olea";
             </ul>
         </section>
 
-        <section id="Contacto">
-            <h2 id="h2-contacto">Contacto</h2>
-            <form action="https://formspree.io/f/xpzvewzn" method="POST">
+        <section id="Contacto" class="profile-section">
+            <h2 id="h2-contacto" class="section-heading">Contacto</h2>
+            <form action="https://formspree.io/f/xpzvewzn" method="POST" class="contact-form">
                 <label for="name">Nombre:</label>
                 <input type="text" id="name" name="name" required />
                 <label for="email">Correo Electrónico:</label>
@@ -76,138 +76,104 @@ const Nombre = "Angel Olea";
 </Layout>
 
 <style>
-    h1, h2, p, ul, li {
-        color: aliceblue;
-        margin-left: 10%;
-        margin-right: 10%;
+    body {
+        background: #171a21;
+        color: #c7d5e0;
+        font-family: "Poppins", sans-serif;
+    }
+    .profile-main {
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .profile-section {
+        background: #1b2838;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+    }
+    .heading, .section-heading {
+        color: #ffffff;
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    .image-container {
+        display: flex;
         justify-content: center;
+        margin-bottom: 20px;
+    }
+    .profile-img {
+        border-radius: 50%;
+        border: 4px solid #2a475e;
+        width: 150px;
+        height: 180px;
+    }
+    .status {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #2a475e;
+        padding: 10px;
+        border-radius: 4px;
+        margin-bottom: 20px;
     }
     p {
-        font-size: x-large;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
     }
-    button {
-        background-color: #4CAF50; 
+    a button, button[type="submit"] {
+        background-color: #5c7e10; 
         border: none;
         color: white;
-        padding: 15px 32px;
+        padding: 10px 20px;
         text-align: center;
         text-decoration: none;
         display: inline-block;
         font-size: 16px;
         cursor: pointer;
         border-radius: 4px;
-        margin-left: 10%;
-        margin-right: 10%;
     }
-    button:hover {
-        background-color: #45a049; 
+    a button:hover, button[type="submit"]:hover {
+        background-color: #4b6910; 
     }
-    ul {
+    .skills-list {
         list-style-type: none;
         padding-left: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
-    ul li {
-        display: inline-block;
-        margin: 20px;
-        text-align: center;
-    }
-    ul li img {
-        display: block;
-        margin: 0 auto;
-    }
-    ul li span {
-        display: block;
-        margin-top: 5px;
-    }
-    section {
-        margin-bottom: 20px;
-        position: relative; /* Para que el SVG se posicione correctamente */
-    }
-    form {
+    .skills-list li {
         display: flex;
         flex-direction: column;
-        max-width: 600px;
+        align-items: center;
+        margin: 10px;
+        text-align: center;
+    }
+    .skills-list li img {
+        display: block;
         margin: 0 auto;
+        margin-bottom: 10px;
+    }
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
     }
     label {
-        margin-top: 10px;
-        color: aliceblue;
+        font-size: 1rem;
+        margin-bottom: 5px;
     }
     input, textarea {
         padding: 10px;
-        margin-top: 5px;
-        border: none;
+        border: 1px solid #c7d5e0;
         border-radius: 4px;
+        background: #171a21;
+        color: #c7d5e0;
     }
-    input[type="text"], input[type="email"], textarea {
-        width: 100%;
-        box-sizing: border-box;
-    }
-    button[type="submit"] {
-        margin-top: 20px;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        padding: 15px 32px;
-        text-align: center;
-        font-size: 16px;
-        cursor: pointer;
-        border-radius: 4px;
-    }
-    button[type="submit"]:hover {
-        background-color: #45a049;
-    }
-    .section {
-        width: 100%;
-        margin-inline-start: auto;
-        padding-top: 5rem;
-        padding-bottom: 8rem;
-        text-align: center;
-    }
-    .heading, #h2-sobre-mi, #h2-contacto {
-        color: white;
-        font-size: 3rem;
-        font-weight: bold;
-        display: flex;
-        flex-direction: row;
-        gap: 1rem;
-        justify-content: center;
-    }
-    .status {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .profile-img {
-        border-radius: 50%;
-        width: 9rem;
-        height: 10rem;
-    }
-    .image-container {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 1rem;
-    }
-    #sobre-mi {
-        width: 100%;
-        margin-inline-start: auto;
-        margin-bottom: 8rem;
-        text-align: center;
-    }
-    #Contacto {
-        margin-bottom: 8rem;
-    }
-    .background-svg-container {
-        position: relative;
-        width: 100%;
-        height: auto;
-    }
-    .background-svg-container svg {
-        width: 100%;
-        height: auto;
-        display: block;
-    }
-    .bottom-svg svg {
-        transform: rotate(0deg); /* No rotar para que las curvas estén hacia arriba */
+    input:focus, textarea:focus {
+        outline: none;
+        border-color: #5c7e10;
     }
 </style>
